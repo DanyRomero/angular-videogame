@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.app-btn {
+  border-radius: 3px;
+  color: white;
+  padding: 5px;
+  border: none;
+  min-width: 150px;
+  margin: 10px 0 10px 5px;
+}
+.app-btn.main {
+  background: #2db8af;
+  box-shadow: 0 2px 0px 0px #059087;
+  color: #ffffff;
+}
