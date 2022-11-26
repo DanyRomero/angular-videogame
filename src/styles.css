@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
 /* You can add global styles to this file, and also import other style files */
 .app-btn {
   border-radius: 3px;
@@ -11,4 +15,20 @@
   background: #2db8af;
   box-shadow: 0 2px 0px 0px #059087;
   color: #ffffff;
+}
+
+
+.nav{
+  background-color: #651FFF;
+  color: white;
+}
+
+body{
+  color: #626262;
+  background-color:#F5F5F5;
+}
+.btn{
+  background-color: #7B1FA2;
+  color: white;
+  border-radius: 15px;
 }
