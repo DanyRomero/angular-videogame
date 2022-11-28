@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DevelopersRoutingModule } from './developers-routing.module';
 import { DevelopersMainPageComponent } from './developers-main-page/developers-main-page.component';
-import { FormsModule } from '@angular/forms';
+import { CoreModule } from 'src/app/core/core.module';
+
 
 
 @NgModule({
   declarations: [
-    DevelopersMainPageComponent
+    DevelopersMainPageComponent,
   ],
   exports: [
-    DevelopersMainPageComponent
+    DevelopersMainPageComponent,
   ],
   imports: [
     CommonModule,
     DevelopersRoutingModule,
-    FormsModule
+    CoreModule
   ]
 })
 export class DevelopersModule { }

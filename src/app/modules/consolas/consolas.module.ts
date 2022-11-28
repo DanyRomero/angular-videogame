@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ConsolasRoutingModule } from './consolas-routing.module';
 import { ConsolasMainPageComponent } from './consolas-main-page/consolas-main-page.component';
-import { FormsModule } from '@angular/forms';
-
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   declarations: [
-    ConsolasMainPageComponent
+    ConsolasMainPageComponent,
   ],
   exports: [
-    ConsolasMainPageComponent
+    ConsolasMainPageComponent,
   ],
-
   imports: [
     CommonModule,
+    CoreModule,
     ConsolasRoutingModule,
-    FormsModule
   ]
 })
 export class ConsolasModule { }
