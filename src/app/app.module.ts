@@ -12,6 +12,7 @@ import { VideogameModule } from './modules/videogame/videogame.module';
   declarations: [
     AppComponent,
     NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,

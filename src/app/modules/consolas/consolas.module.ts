@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ConsolasRoutingModule } from './consolas-routing.module';
 import { ConsolasMainPageComponent } from './consolas-main-page/consolas-main-page.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ConsolasMainPageComponent } from './consolas-main-page/consolas-main-pa
 
   imports: [
     CommonModule,
-    ConsolasRoutingModule
+    ConsolasRoutingModule,
+    FormsModule
   ]
 })
 export class ConsolasModule { }
