@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConsolasRoutingModule } from './consolas-routing.module';
 import { ConsolasMainPageComponent } from './consolas-main-page/consolas-main-page.component';
-import { CoreModule } from '../../core/core.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { CoreModule } from '../../core/core.module';
   ],
   imports: [
     CommonModule,
-    CoreModule,
+    SharedModule,
     ConsolasRoutingModule,
   ]
 })

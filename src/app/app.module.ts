@@ -7,7 +7,7 @@ import { ConsolasModule } from './modules/consolas/consolas.module';
 import { DevelopersModule } from './modules/developers/developers.module';
 import { VideogameModule } from './modules/videogame/videogame.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     ConsolasModule,
-    CoreModule,
+    SharedModule,
     DevelopersModule,
     VideogameModule,
     FormsModule,
