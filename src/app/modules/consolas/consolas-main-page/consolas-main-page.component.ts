@@ -17,16 +17,19 @@ export class ConsolasMainPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(' ConsolasMainPageComponent ngOnInit');
     const userId = this.session.getUserId();
     this.consoleService.getConsoles(userId).subscribe(
       (data: Consolee[]) => {
-        console.log('getConsoles');
+        console.log(' getConsoles subscribe');
         this.list = data;
       },
       (error) => {}
     );
+    let count = 1;
     this.consoleService.getInterval().subscribe(() => {
-      console.log(1);
+      count += 1;
+      console.log('Yo soy el subscribe en getInterval ' + count);
     });
   }
 
@@ -37,9 +40,9 @@ export class ConsolasMainPageComponent implements OnInit {
   pruebaConsole() {}
 
   listenSubmit(data: Consolee) {
-    console.log(data);
+    console.log('Yo soy del output/Listen', data);
     this.consoleService.createConsoles(data).subscribe(
-      (data: Consolee) => {
+      (data) => {
         console.log('Si se agrego');
       },
       (error) => {}
