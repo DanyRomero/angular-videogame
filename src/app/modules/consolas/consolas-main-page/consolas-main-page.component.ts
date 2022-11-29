@@ -8,32 +8,29 @@ import { ConsoleeService } from '../service/consolee.service';
   templateUrl: './consolas-main-page.component.html',
 })
 export class ConsolasMainPageComponent implements OnInit {
-  list: Consolee[] = [];
-  newId = 73737;
-  add = false;
+  consolesList: Consolee[] = [];
+  /*  newId = 73737;
+  add = false; */
+
   constructor(
     private session: SessionService,
     private consoleService: ConsoleeService
   ) {}
 
   ngOnInit(): void {
-    console.log(' ConsolasMainPageComponent ngOnInit');
-    const userId = this.session.getUserId();
-    this.consoleService.getConsoles(userId).subscribe(
+    /*const userId = this.session.getUserId();
+    this.consoleService.fetchConsoles(userId).subscribe(
       (data: Consolee[]) => {
         console.log(' getConsoles subscribe');
         this.list = data;
       },
-      (error) => {}
+      (error) => {console.log("error", error)}
     );
-    let count = 1;
-    this.consoleService.getInterval().subscribe(() => {
-      count += 1;
-      console.log('Yo soy el subscribe en getInterval ' + count);
-    });
+    let count = 1;*/
+    this.fetchConsoles()
   }
 
-  newConsole() {
+  /*  newConsole() {
     this.add = true;
   }
 
@@ -47,5 +44,18 @@ export class ConsolasMainPageComponent implements OnInit {
       },
       (error) => {}
     );
+  } */
+
+  fetchConsoles() {
+    this.consoleService.fetchConsoles().subscribe((data: Consolee[]) => {
+      this.consolesList = data;
+      console.log(data, this.consolesList);
+    });
+  }
+
+  createConsole(consolee: Consolee) {
+    this.consoleService.postConsole(consolee).subscribe((data) => {
+      this.fetchConsoles()
+    });
   }
 }

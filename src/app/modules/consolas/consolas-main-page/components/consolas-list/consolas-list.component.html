@@ -1,0 +1,15 @@
+<div class="ui middle aligned divided list" style="margin-top: 10px">
+  <div
+    class="item"
+    *ngFor="let console of consolesList"
+    style="margin-top: 10px"
+  >
+    <div class="right floated content">
+      <a>x</a>
+    </div>
+    <i class="violet gamepad icon" style="margin: 10px 0 0 10px"></i>
+    <div class="content">
+      {{ console.nombre }}
+    </div>
+  </div>
+</div>

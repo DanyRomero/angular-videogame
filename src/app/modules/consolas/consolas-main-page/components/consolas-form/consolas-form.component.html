@@ -1,11 +1,11 @@
-<form [formGroup]="consoleForm" (ngSubmit)="onSubmit()" class="ui form">
+<form [formGroup]="consoleForm" (ngSubmit)="handleSubmit()" class="ui form">
   <div class="ui grid">
-    <div class="ui twelve wide column" *ngIf="consoleForm.contains('name')">
+    <div class="ui twelve wide column">
       <input
         type="text"
-        placeholder="Nombre"
+        placeholder="Nombre de la consola"
         class="ui input focus"
-        formControlName="name"
+        formControlName="nombre"
         style="
           display: block;
           width: 100%;

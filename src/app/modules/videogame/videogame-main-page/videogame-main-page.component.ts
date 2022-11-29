@@ -9,6 +9,6 @@ import { ConsoleeService } from '../../consolas/service/consolee.service';
 export class VideogameMainPageComponent implements OnInit {
   constructor(private consoleService: ConsoleeService) {}
   ngOnInit(): void {
-    this.consoleService.getConsoles().subscribe();
+    this.consoleService.fetchConsoles().subscribe();
   }
 }

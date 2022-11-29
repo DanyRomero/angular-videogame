@@ -7,12 +7,11 @@ import { Consolee } from 'src/app/core/interfaces/console.interface';
   providedIn: 'root',
 })
 export class ConsoleeService {
-  private consolee: Consolee[] = [{ id: 1, name: 'Nintendo 64', userId: 123 }];
-  private userId: string = '';
-
+  private consolee: Consolee[] = [];
+  
   constructor(private http: HttpClient) {}
 
-  getConsoles(id: string = ''): Observable<Consolee[]> {
+  /* getConsoles(id: string = ''): Observable<Consolee[]> {
     let params = new HttpParams();
     params.set('page', 1); // ?page=1
     if (id) {
@@ -35,13 +34,15 @@ export class ConsoleeService {
 
   getInterval(): Observable<number> {
     return interval(1000);
+  } */
+
+  fetchConsoles(): Observable<Consolee[]>{
+    return this.http.get<Consolee[]>('http://localhost:5005/consolas')
   }
 
-  setUserId(userId: string) {
-    this.userId = userId;
+  postConsole(oneConsole: Consolee): Observable<Consolee>{
+    return this.http.post<Consolee>(`http://localhost:5005/consolas`, oneConsole)
   }
 
-  getUserId() {
-    return this.userId;
-  }
+
 }
