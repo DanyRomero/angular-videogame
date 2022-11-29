@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NameFormComponent } from './name-form/name-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 
 
 
@@ -13,13 +15,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
+    
   ],
   exports: [
     NavbarComponent,
     NameFormComponent,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ]
 })
 export class SharedModule { }

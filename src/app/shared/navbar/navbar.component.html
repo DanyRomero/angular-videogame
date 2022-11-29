@@ -4,8 +4,10 @@
     <h3 class="ui header item">VideogamesApp</h3>
   </div>
   <div class="right menu">
-    <a class="active item"> Videojuegos </a>
-    <a class="item"> Consolas </a>
-    <a class="item"> Desarrolladores </a>
+    <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page" class="active item"> Videojuegos </a>
+    <a routerLink="/consolas" routerLinkActive="active" ariaCurrentWhenActive="page" class="item"> Consolas </a>
+    <a  routerLink="/desarrolladores" routerLinkActive="active" ariaCurrentWhenActive="page" class="item"> Desarrolladores </a>
   </div>
 </div>
+<router-outlet></router-outlet>
+
