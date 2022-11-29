@@ -17,10 +17,11 @@ export class ConsolasMainPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    console.log(' ConsolasMainPageComponent ngOnInit');
     const userId = this.session.getUserId();
     this.consoleService.getConsoles(userId).subscribe(
       (data: Consolee[]) => {
-        console.log('getConsoles');
+        console.log(' getConsoles subscribe');
         this.list = data;
       },
       (error) => {}
@@ -28,7 +29,7 @@ export class ConsolasMainPageComponent implements OnInit {
     let count = 1;
     this.consoleService.getInterval().subscribe(() => {
       count += 1;
-      console.log('Yo soy el interval ' + count);
+      console.log('Yo soy el subscribe en getInterval ' + count);
     });
   }
 

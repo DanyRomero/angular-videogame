@@ -7,7 +7,7 @@ import { Consolee } from 'src/app/core/interfaces/console.interface';
   providedIn: 'root',
 })
 export class ConsoleeService {
-  private consolee: Consolee[] = [];
+  private consolee: Consolee[] = [{ id: 1, name: 'Nintendo 64', userId: 123 }];
   private userId: string = '';
 
   constructor(private http: HttpClient) {}
@@ -21,14 +21,16 @@ export class ConsoleeService {
     // return this.http.get<Consolee[]>(`localhost:12721/api/consolas/list`, {
     //   params,
     // });
-    return of([{ id: 1, name: 'Nintendo 64' }] as any); // ejemplo
+    return of(this.consolee); // ejemplo
   }
 
-  createConsoles(consola: Consolee): Observable<Consolee> {
-    return this.http.post<Consolee>(
-      `localhost:12721/api/consolas/create`,
-      consola
-    );
+  createConsoles(consola: Consolee): Observable<boolean> {
+    // return this.http.post<Consolee>(
+    //   `localhost:12721/api/consolas/create`,
+    //   consola
+    // );
+    this.consolee.push(consola);
+    return of(true);
   }
 
   getInterval(): Observable<number> {
