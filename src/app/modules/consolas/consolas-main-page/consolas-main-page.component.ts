@@ -10,6 +10,7 @@ import { ConsoleeService } from '../service/consolee.service';
 export class ConsolasMainPageComponent implements OnInit {
   list: Consolee[] = [];
   newId = 73737;
+  add = false;
   constructor(
     private session: SessionService,
     private consoleService: ConsoleeService
@@ -27,6 +28,10 @@ export class ConsolasMainPageComponent implements OnInit {
     this.consoleService.getInterval().subscribe(() => {
       console.log(1);
     });
+  }
+
+  newConsole() {
+    this.add = true;
   }
 
   pruebaConsole() {}

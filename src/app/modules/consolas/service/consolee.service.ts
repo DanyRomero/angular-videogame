@@ -1,13 +1,13 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { interval, Observable } from 'rxjs';
+import { interval, Observable, of } from 'rxjs';
 import { Consolee } from 'src/app/core/interfaces/console.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConsoleeService {
-  private consolee: Consolee = [];
+  private consolee: Consolee[] = [];
   private userId: string = '';
 
   constructor(private http: HttpClient) {}
@@ -18,9 +18,10 @@ export class ConsoleeService {
     if (id) {
       params.set('id', id); // &id=1
     }
-    return this.http.get<Consolee[]>(`localhost:12721/api/consolas/list`, {
-      params,
-    });
+    // return this.http.get<Consolee[]>(`localhost:12721/api/consolas/list`, {
+    //   params,
+    // });
+    return of([{ id: 1, name: 'Nintendo 64' }] as any); // ejemplo
   }
 
   createConsoles(consola: Consolee): Observable<Consolee> {

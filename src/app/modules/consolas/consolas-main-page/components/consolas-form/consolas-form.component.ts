@@ -32,7 +32,7 @@ export class ConsolasFormComponent implements OnInit {
     this.submitted = true;
     if (this.consoleForm.valid) {
       const data: Consolee = {} as Consolee;
-      data.name = this.consoleForm.get('name').value || '';
+      data.name = this.consoleForm.get('name')!.value || '';
       data.userId = this.userId;
       this.submitForm.emit(data);
     }
