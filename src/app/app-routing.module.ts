@@ -6,7 +6,7 @@ import { VideogameFormComponent } from './modules/videogame/videogame-form/video
 import { VideogameMainPageComponent } from './modules/videogame/videogame-main-page/videogame-main-page.component';
 
 const routes: Routes = [
-  { path: '', component:VideogameMainPageComponent},
+  { path: '', component: VideogameMainPageComponent },
   { path: 'desarrolladores', component: DevelopersMainPageComponent },
   { path: 'consolas', component: ConsolasMainPageComponent },
   { path: 'videojuego/agregar', component: VideogameFormComponent },
@@ -14,6 +14,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

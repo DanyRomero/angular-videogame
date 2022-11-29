@@ -2,11 +2,20 @@
   <h1 class="ui grey header">Consolas</h1>
   <div class="ui grid">
     <div class="eight wide column">
-      <h4>Agregar nueva consola</h4>
-      <app-name-form></app-name-form>
+      <h4>Consolas</h4>
     </div>
+    <div *ngFor="let item of list">
+      {{ item.name }}
+    </div>
+  </div>
+  <div class="ui grid">
     <div class="eight wide column">
-      <h4>Consolas con más videojuegos</h4>
+      <button (click)="newConsole()">Agregar</button>
     </div>
+    <app-consolas-form
+      *ngIf="add"
+      [userId]="newId"
+      (submitForm)="listenSubmit($event)"
+    ></app-consolas-form>
   </div>
 </div>
