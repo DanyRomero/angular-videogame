@@ -49,7 +49,7 @@ export class ConsolasMainPageComponent implements OnInit {
   fetchConsoles() {
     this.consoleService.fetchConsoles().subscribe((data: Consolee[]) => {
       this.consolesList = data;
-      console.log(data, this.consolesList);
+      
     });
   }
 
