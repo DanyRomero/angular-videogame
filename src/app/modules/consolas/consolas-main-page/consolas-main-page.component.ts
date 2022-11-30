@@ -8,7 +8,7 @@ import { ConsoleeService } from '../service/consolee.service';
   templateUrl: './consolas-main-page.component.html',
 })
 export class ConsolasMainPageComponent implements OnInit {
-  consolesList: Consolee[] = [];
+  consolasList: Consolee[] = [];
   /*  newId = 73737;
   add = false; */
 
@@ -27,7 +27,7 @@ export class ConsolasMainPageComponent implements OnInit {
       (error) => {console.log("error", error)}
     );
     let count = 1;*/
-    this.fetchConsoles()
+    this.fetchConsoles();
   }
 
   /*  newConsole() {
@@ -48,14 +48,13 @@ export class ConsolasMainPageComponent implements OnInit {
 
   fetchConsoles() {
     this.consoleService.fetchConsoles().subscribe((data: Consolee[]) => {
-      this.consolesList = data;
-      
+      this.consolasList = data;
     });
   }
 
   createConsole(consolee: Consolee) {
     this.consoleService.postConsole(consolee).subscribe((data) => {
-      this.fetchConsoles()
+      this.fetchConsoles();
     });
   }
 }
