@@ -1,11 +1,31 @@
-<div class="ui container">
+<h3>Listado</h3>
+<div
+  class="ui card"
+  style="margin-top: 30px; padding: 20px; display: block; width: 100%"
+>
   <div class="ui middle aligned divided list">
     <div class="item" *ngFor="let videogame of videogames">
       <div class="right floated content">
-        <a class="ui button" href="">x</a>
+        <a
+          class="ui icon button"
+          href=""
+          style="background-color: #ffffff; color: red"
+          ><i class="window close outline icon"></i
+        ></a>
+        <a
+          class="ui icon button"
+          href=""
+          style="background-color: #ffffff; color: #2185D0"
+          ><i class="edit outline icon"></i
+        ></a>
       </div>
-      <img>
-      <div class="content">Hola</div>
+      <div class="content">
+        <div class="header">{{ videogame.nombre }}</div>
+        <div class="description" style="margin-top: 8px">
+          Por {{ videogame.desarrollador?.nombre }}
+        </div>
+      </div>
+      <div></div>
     </div>
   </div>
 </div>

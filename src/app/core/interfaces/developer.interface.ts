@@ -7,6 +7,7 @@ export interface TopDeveloper{
   nombre: string,
   desarrollador: {
     nombre: string
+    _id: string,
   },
   consolas: number,
 
