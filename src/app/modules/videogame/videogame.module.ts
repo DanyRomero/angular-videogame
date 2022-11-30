@@ -5,12 +5,14 @@ import { VideogameRoutingModule } from './videogame-routing.module';
 import { VideogameFormComponent } from './videogame-main-page/components/videogame-form/videogame-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VideogameMainPageComponent } from './videogame-main-page/videogame-main-page.component';
+import { VideogameListComponent } from './videogame-main-page/components/videogame-list/videogame-list.component';
 
 
 @NgModule({
   declarations: [
     VideogameFormComponent,
     VideogameMainPageComponent,
+    VideogameListComponent,
 
   ],
   exports: [

@@ -1,6 +1,6 @@
 import { Developer } from './developer.interface';
 
-export interface videogame{
+export interface Videogame{
   _id: string,
   nombre: string,
   descripción: string,
