@@ -14,4 +14,8 @@ export class VideogameServiceService {
     return this.http.get<Videogame[]>('http://localhost:5005/videojuegos')
 
   }
+
+  fetchOneVideogame(id: string): Observable<Videogame>{
+    return this.http.get<Videogame>(`http://localhost:5005/videojuegos/${id}`)
+  }
 }

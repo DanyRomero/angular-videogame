@@ -6,6 +6,8 @@ import { VideogameFormComponent } from './videogame-main-page/components/videoga
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VideogameMainPageComponent } from './videogame-main-page/videogame-main-page.component';
 import { VideogameListComponent } from './videogame-main-page/components/videogame-list/videogame-list.component';
+import { VideogameDetailsComponent } from './videogame-details/videogame-details.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import { VideogameListComponent } from './videogame-main-page/components/videoga
     VideogameFormComponent,
     VideogameMainPageComponent,
     VideogameListComponent,
+    VideogameDetailsComponent,
+    
 
   ],
   exports: [
@@ -22,7 +26,8 @@ import { VideogameListComponent } from './videogame-main-page/components/videoga
     CommonModule,
     VideogameRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
   ]
 })
 export class VideogameModule { }

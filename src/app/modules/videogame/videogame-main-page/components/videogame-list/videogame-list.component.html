@@ -20,7 +20,7 @@
         ></a>
       </div>
       <div class="content">
-        <div class="header">{{ videogame.nombre }}</div>
+        <a [routerLink]="['/videojuego',videogame._id]" class="header">{{ videogame.nombre }}</a>
         <div class="description" style="margin-top: 8px">
           Por {{ videogame.desarrollador?.nombre }}
         </div>
