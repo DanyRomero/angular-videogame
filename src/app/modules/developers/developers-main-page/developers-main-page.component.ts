@@ -3,6 +3,7 @@ import { Developer } from 'src/app/core/interfaces/developer.interface';
 import { SessionService } from 'src/app/core/session/session.service';
 import { ConsoleeService } from '../../consolas/service/consolee.service';
 import { DeveloperService } from '../service/developer.service';
+import { TopDeveloper } from '../../../core/interfaces/developer.interface';
 
 @Component({
   selector: 'app-developers-main-page',
@@ -10,7 +11,7 @@ import { DeveloperService } from '../service/developer.service';
 })
 export class DevelopersMainPageComponent implements OnInit {
    developers: Developer[]= []
-   topDevelopers: Developer[]= []
+   topDevelopers: TopDeveloper[]= []
   
   constructor(
     private DeveloperService: DeveloperService

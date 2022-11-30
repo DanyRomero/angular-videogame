@@ -4,12 +4,12 @@
     <div class="item" *ngFor="let developer of topDevelopers">
       <div class="left floated content">
         <div class="content">
-          {{developer}}
+          {{developer.desarrollador.nombre}}
         </div>
       </div>
       <div class="right floated content">
         <div class="content">
-          <p>Consolas: {{developer}}</p>
+          <p>Consolas: {{developer.consolas}}</p>
         </div>
       </div>
     </div>

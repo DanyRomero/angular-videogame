@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Developer } from '../../../../../core/interfaces/developer.interface';
+import { Developer, TopDeveloper } from '../../../../../core/interfaces/developer.interface';
 
 @Component({
   selector: 'app-top-developers',
@@ -7,7 +7,7 @@ import { Developer } from '../../../../../core/interfaces/developer.interface';
   styleUrls: ['./top-developers.component.css']
 })
 export class TopDevelopersComponent {
- @Input() topDevelopers: Developer[] = []
+ @Input() topDevelopers: TopDeveloper[] = []
 
  
 }

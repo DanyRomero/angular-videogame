@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Consolee } from '../../../../../core/interfaces/console.interface';
 
 @Component({
@@ -8,4 +8,9 @@ import { Consolee } from '../../../../../core/interfaces/console.interface';
 })
 export class ConsolasListComponent {
   @Input() consolesList: Consolee[] = []
+  @Output() onDelete = new EventEmitter ();
+
+  deleteConsole(id: string){
+    this.onDelete.emit(id)
+  }
 }

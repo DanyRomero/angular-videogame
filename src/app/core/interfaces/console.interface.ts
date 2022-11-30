@@ -1,3 +1,10 @@
 export interface Consolee {
-  nombre: string;
+  _id: string,
+  nombre: string,
+}
+
+export interface TopConsole{
+  _id: string,
+  nombre: string,
+  count: number,
 }

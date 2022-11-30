@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Consolee } from 'src/app/core/interfaces/console.interface';
 import { SessionService } from 'src/app/core/session/session.service';
 import { ConsoleeService } from '../service/consolee.service';
+import { TopConsole } from '../../../core/interfaces/console.interface';
 
 @Component({
   selector: 'app-consolas-main-page',
@@ -9,7 +10,7 @@ import { ConsoleeService } from '../service/consolee.service';
 })
 export class ConsolasMainPageComponent implements OnInit {
   consolasList: Consolee[] = [];
-  topConsoles: Consolee[] = []
+  topConsoles: TopConsole[] = []
   /*  newId = 73737;
   add = false; */
 
@@ -64,6 +65,12 @@ export class ConsolasMainPageComponent implements OnInit {
     this.consoleService.fetchTopConsoles().subscribe((data)=>{
       this.topConsoles= data;
       console.log("topConsolas", this.topConsoles)
+    })
+  }
+
+  deleteConsole(id: string){
+    this.consoleService.deleteConsole(id).subscribe((data)=>{
+      this.fetchConsoles();
     })
   }
 }

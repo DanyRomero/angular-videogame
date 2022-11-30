@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { interval, Observable, of } from 'rxjs';
 import { Consolee } from 'src/app/core/interfaces/console.interface';
+import { TopConsole } from '../../../core/interfaces/console.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -40,13 +41,15 @@ export class ConsoleeService {
     return this.http.get<Consolee[]>('http://localhost:5005/consolas')
   }
 
-  fetchTopConsoles(): Observable<Consolee[]>{
-    return this.http.get<Consolee[]>('http://localhost:5005/consolas/top')
+  fetchTopConsoles(): Observable<TopConsole[]>{
+    return this.http.get<TopConsole[]>('http://localhost:5005/consolas/top')
   }
 
   postConsole(oneConsole: Consolee): Observable<Consolee>{
     return this.http.post<Consolee>(`http://localhost:5005/consolas`, oneConsole)
   }
 
-
+  deleteConsole(id: string): Observable<unknown>{
+    return this.http.delete(`http://localhost:5005/consolas/${id}`)
+  }
 }
