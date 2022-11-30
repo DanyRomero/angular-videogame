@@ -4,7 +4,7 @@
     <div class="eight wide column">
       <h4>Agregar nuevo desarrollador</h4>
       <app-developer-form (onSubmit)="postDeveloper($event)"></app-developer-form>
-      <app-developers-list [developers]="developers"></app-developers-list>
+      <app-developers-list (onDeleteDev)="deleteDeveloper($event)" [developers]="developers"></app-developers-list>
     </div>
     <div class="eight wide column">
       <app-top-developers [topDevelopers]="topDevelopers"></app-top-developers>

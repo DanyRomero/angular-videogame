@@ -41,4 +41,10 @@ export class DevelopersMainPageComponent implements OnInit {
       this.fetchDevelopers()
     })
   }
+
+  deleteDeveloper(id: string){
+    this.DeveloperService.deleteDeveloper(id).subscribe(data => {
+      this.fetchDevelopers();
+    })
+  }
 }

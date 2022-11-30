@@ -22,5 +22,9 @@ export class DeveloperService {
   fetchTopDevelopers(): Observable<TopDeveloper[]>{
     return this.http.get<TopDeveloper[]>('http://localhost:5005/desarrolladores/top')
   }
+
+  deleteDeveloper(id: string): Observable<unknown>{
+    return this.http.delete(`http://localhost:5005/desarrolladores/${id}`)
+  }
   
 }
