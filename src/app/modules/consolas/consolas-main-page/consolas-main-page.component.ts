@@ -9,6 +9,7 @@ import { ConsoleeService } from '../service/consolee.service';
 })
 export class ConsolasMainPageComponent implements OnInit {
   consolasList: Consolee[] = [];
+  topConsoles: Consolee[] = []
   /*  newId = 73737;
   add = false; */
 
@@ -28,6 +29,7 @@ export class ConsolasMainPageComponent implements OnInit {
     );
     let count = 1;*/
     this.fetchConsoles();
+    this.fetchTopConsoles()
   }
 
   /*  newConsole() {
@@ -56,5 +58,12 @@ export class ConsolasMainPageComponent implements OnInit {
     this.consoleService.postConsole(consolee).subscribe((data) => {
       this.fetchConsoles();
     });
+  }
+
+  fetchTopConsoles(){
+    this.consoleService.fetchTopConsoles().subscribe((data)=>{
+      this.topConsoles= data;
+      console.log("topConsolas", this.topConsoles)
+    })
   }
 }

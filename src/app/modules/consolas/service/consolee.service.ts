@@ -40,6 +40,10 @@ export class ConsoleeService {
     return this.http.get<Consolee[]>('http://localhost:5005/consolas')
   }
 
+  fetchTopConsoles(): Observable<Consolee[]>{
+    return this.http.get<Consolee[]>('http://localhost:5005/consolas/top')
+  }
+
   postConsole(oneConsole: Consolee): Observable<Consolee>{
     return this.http.post<Consolee>(`http://localhost:5005/consolas`, oneConsole)
   }

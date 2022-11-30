@@ -10,6 +10,7 @@ import { DeveloperService } from '../service/developer.service';
 })
 export class DevelopersMainPageComponent implements OnInit {
    developers: Developer[]= []
+   topDevelopers: Developer[]= []
   
   constructor(
     private DeveloperService: DeveloperService
@@ -18,6 +19,7 @@ export class DevelopersMainPageComponent implements OnInit {
  
   ngOnInit(): void {
     this.fetchDevelopers()
+    this.fetchTopDevelopers()
   }
 
   fetchDevelopers(){
@@ -25,6 +27,14 @@ export class DevelopersMainPageComponent implements OnInit {
       this.developers= data
     })
   }
+
+  fetchTopDevelopers(){
+    this.DeveloperService.fetchTopDevelopers().subscribe((data)=>{
+      this.topDevelopers= data;
+      console.log("topDesarrolladores", this.topDevelopers)
+    })
+  }
+
   postDeveloper(developer: Developer){
     this.DeveloperService.postDeveloper(developer).subscribe((data)=>{
       this.fetchDevelopers()

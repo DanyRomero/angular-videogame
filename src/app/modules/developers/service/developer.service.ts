@@ -18,5 +18,9 @@ export class DeveloperService {
   postDeveloper(developer: Developer): Observable<Developer>{
     return this.http.post<Developer>(`http://localhost:5005/desarrolladores`, developer)
   }
+
+  fetchTopDevelopers(): Observable<Developer[]>{
+    return this.http.get<Developer[]>('http://localhost:5005/desarrolladores/top')
+  }
   
 }

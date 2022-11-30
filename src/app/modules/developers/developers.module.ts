@@ -6,6 +6,7 @@ import { CoreModule } from 'src/app/core/core.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DeveloperFormComponent } from './developers-main-page/components/developer-form/developer-form.component';
 import { DevelopersListComponent } from './developers-main-page/components/developers-list/developers-list.component';
+import { TopDevelopersComponent } from './developers-main-page/components/top-developers/top-developers.component';
 
 
 
@@ -14,6 +15,7 @@ import { DevelopersListComponent } from './developers-main-page/components/devel
     DevelopersMainPageComponent,
     DeveloperFormComponent,
     DevelopersListComponent,
+    TopDevelopersComponent,
   ],
   exports: [
     DevelopersMainPageComponent,

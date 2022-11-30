@@ -1,0 +1,17 @@
+<h4>Top 5 de desarrolladores que tienen videojuegos para más consolas</h4>
+<div class="ui card"  style="margin-top: 30px; padding: 20px; display: block; width: 100%;">
+  <div class="ui middle aligned divided list">
+    <div class="item" *ngFor="let developer of topDevelopers">
+      <div class="left floated content">
+        <div class="content">
+          {{developer}}
+        </div>
+      </div>
+      <div class="right floated content">
+        <div class="content">
+          <p>Consolas: {{developer}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

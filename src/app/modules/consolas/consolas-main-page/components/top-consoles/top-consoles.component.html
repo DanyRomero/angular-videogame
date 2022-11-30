@@ -1,0 +1,17 @@
+<h4>Consolas con más videojuegos</h4>
+<div class="ui card"  style="margin-top: 30px; padding: 20px; display: block; width: 100%;">
+  <div class="ui middle aligned divided list">
+    <div class="item" *ngFor="let consolee of topConsoles">
+      <div class="left floated content">
+        <div class="content">
+          {{consolee}}
+        </div>
+      </div>
+      <div class="right floated content">
+        <div class="content">
+          <p>Videojuegos:{{consolee}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
