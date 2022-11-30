@@ -3,7 +3,7 @@
   <div class="ui grid">
     <div class="eight wide column">
       <h4>Agregar nuevo desarrollador</h4>
-      <app-developer-form></app-developer-form>
+      <app-developer-form (onSubmit)="postDeveloper($event)"></app-developer-form>
       <app-developers-list [developers]="developers"></app-developers-list>
     </div>
     <div class="eight wide column">

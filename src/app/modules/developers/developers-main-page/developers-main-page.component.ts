@@ -9,12 +9,13 @@ import { DeveloperService } from '../service/developer.service';
   templateUrl: './developers-main-page.component.html',
 })
 export class DevelopersMainPageComponent implements OnInit {
-  developers: Developer[]= []
+   developers: Developer[]= []
+  
   constructor(
     private DeveloperService: DeveloperService
   ) {}
 
-
+ 
   ngOnInit(): void {
     this.fetchDevelopers()
   }
@@ -22,6 +23,11 @@ export class DevelopersMainPageComponent implements OnInit {
   fetchDevelopers(){
     this.DeveloperService.fetchDevelopers().subscribe((data)=>{
       this.developers= data
+    })
+  }
+  postDeveloper(developer: Developer){
+    this.DeveloperService.postDeveloper(developer).subscribe((data)=>{
+      this.fetchDevelopers()
     })
   }
 }
