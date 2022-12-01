@@ -6,18 +6,19 @@
   <div class="ui middle aligned divided list">
     <div class="item" *ngFor="let videogame of videogames">
       <div class="right floated content">
-        <a
+        <button
+          (click)="deleteVideogame(videogame._id)"
           class="ui icon button"
           href=""
           style="background-color: #ffffff; color: red"
           ><i class="window close outline icon"></i
-        ></a>
-        <a
+        ></button>
+        <button
           class="ui icon button"
           href=""
           style="background-color: #ffffff; color: #2185D0"
           ><i class="edit outline icon"></i
-        ></a>
+        ></button>
       </div>
       <div class="content">
         <a [routerLink]="['/videojuego',videogame._id]" class="header">{{ videogame.nombre }}</a>

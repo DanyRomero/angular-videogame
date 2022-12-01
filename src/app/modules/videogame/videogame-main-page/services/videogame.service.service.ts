@@ -18,4 +18,8 @@ export class VideogameServiceService {
   fetchOneVideogame(id: string): Observable<Videogame>{
     return this.http.get<Videogame>(`http://localhost:5005/videojuegos/${id}`)
   }
+
+  deleteVideogame(id: string) : Observable<unknown>{
+    return this.http.delete(`http://localhost:5005/videojuegos/${id}`)
+  }
 }

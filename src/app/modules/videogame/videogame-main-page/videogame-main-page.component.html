@@ -11,6 +11,6 @@
 <div class="ui container grid">
   <div class="six wide column"></div>
   <div class="ten wide column">
-    <app-videogame-list [videogames]="videogames"></app-videogame-list>
+    <app-videogame-list (onDeleteVideogame)="deleteVideogame($event)" [videogames]="videogames"></app-videogame-list>
   </div>
 </div>

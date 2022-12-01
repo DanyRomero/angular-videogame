@@ -45,4 +45,10 @@ export class VideogameMainPageComponent implements OnInit {
      
     });
   }
+
+  deleteVideogame(id: string){
+    this.VideogameService.deleteVideogame(id).subscribe( data =>{
+      this.fetchVideogames()
+    })
+  }
 }
