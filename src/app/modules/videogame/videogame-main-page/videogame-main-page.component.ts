@@ -24,6 +24,7 @@ export class VideogameMainPageComponent implements OnInit {
     
     this.fetchConsolas()
     this.fetchVideogames()
+    this.fetchDevelopers()
 
   }
 

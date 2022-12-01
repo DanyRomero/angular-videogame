@@ -8,6 +8,7 @@ import { VideogameMainPageComponent } from './videogame-main-page/videogame-main
 import { VideogameListComponent } from './videogame-main-page/components/videogame-list/videogame-list.component';
 import { VideogameDetailsComponent } from './videogame-details/videogame-details.component';
 import { RouterModule } from '@angular/router';
+import { VideogameEditFormComponent } from './videogame-main-page/components/videogame-edit-form/videogame-edit-form.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     VideogameMainPageComponent,
     VideogameListComponent,
     VideogameDetailsComponent,
+    VideogameEditFormComponent,
     
 
   ],

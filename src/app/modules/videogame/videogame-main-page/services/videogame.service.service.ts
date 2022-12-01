@@ -22,4 +22,8 @@ export class VideogameServiceService {
   deleteVideogame(id: string) : Observable<unknown>{
     return this.http.delete(`http://localhost:5005/videojuegos/${id}`)
   }
+
+  postVideogame(videogame: Videogame) : Observable<Videogame>{
+    return this.http.post<Videogame>(`http://localhost:5005/videojuegos`, videogame)
+  }
 }

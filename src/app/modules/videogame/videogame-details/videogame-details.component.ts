@@ -12,8 +12,8 @@ import { Consolee } from '../../../core/interfaces/console.interface';
 export class VideogameDetailsComponent implements OnInit {
   videogame: Videogame | undefined;
   id: string = ""
-  consolas: Consolee[]= []
-  comaConsolas: string = ""
+  consolas: Consolee[] | undefined= []
+  comaConsolas: string  | undefined= ""
 
   
 
@@ -38,7 +38,7 @@ export class VideogameDetailsComponent implements OnInit {
       (data) => {
         this.videogame = data
         this.consolas = this.videogame.consolas
-        this.comaConsolas = this.consolas.map(consola=>consola.nombre).join(", ")
+        this.comaConsolas = this.consolas?.map(consola=>consola.nombre).join(", ")
       }
     );
   }

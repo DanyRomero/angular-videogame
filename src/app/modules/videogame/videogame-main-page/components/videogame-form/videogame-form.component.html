@@ -1,12 +1,14 @@
-<h1 class="ui center aligned header" style="margin-top: 15px;">Nuevo Videojuego</h1>
+<h1 class="ui center aligned header" style="margin-top: 15px">
+  Nuevo Videojuego
+</h1>
 <div class="ui container" style="margin-top: 20px; width: 50%">
   <form [formGroup]="videogameForm" (ngSubmit)="onSubmit()" class="ui form">
-    <div class="field">
+    <div class="field required">
       <label>Nombre</label>
       <input
         type="text"
         class="ui input"
-        formControlName="name"
+        formControlName="nombre"
         style="
           display: block;
           width: 100%;
@@ -17,26 +19,27 @@
         "
       />
     </div>
-    <div class="field">
+    <div class="field required">
       <label>Descripción</label>
       <textarea
-      cols="30"
-      rows="10"
-      formControlName="description"
-      style="
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        padding: 10px;
-        border: 1px gray solid;
-        background-color: #f5f5f5;
-      "
-    ></textarea>
+        cols="30"
+        rows="10"
+        formControlName="descripcion"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      ></textarea>
     </div>
-    <div class="field">
+    <div class="field required">
       <label>Desarrollador</label>
       <select
-        formControlName="developer"
+        formControlName="desarrollador"
+       
         style="
           display: block;
           width: 100%;
@@ -46,29 +49,53 @@
           background-color: #f5f5f5;
         "
       >
-        <option value="">Selecciona el desarrollador</option>
-        <option value="1">1</option>
-        <option value="0">0</option>
+        <option *ngFor="let developer of developers" [value]="developer._id">
+          {{ developer.nombre }}
+        </option>
       </select>
     </div>
-    <div class="field">
+
+    <div class="field required">
       <label>Año</label>
       <input
-      type="number"
-      placeholder="Año"
-      class="ui input"
-      formControlName="year"
-      style="
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        padding: 10px;
-        border: 1px gray solid;
-        background-color: #f5f5f5;
-      "
-    />
+        type="number"
+        placeholder="Año"
+        class="ui input"
+        formControlName="año"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      />
     </div>
-    
+    <div class="field required">
+      <label>Consolas</label>
+      <select multiple="" class="ui dropdown">
+        <option *ngFor="let consolee of consoles" [value]="consolee._id">{{consolee.nombre}}</option>
+      </select>
+    </div>
+
+    <div class="field required">
+      <label>Activo</label>
+      <input
+        type="text"
+        placeholder="Activo"
+        class="ui input"
+        formControlName="activo"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      />
+    </div>
 
     <button class="ui violet button fluid" style="margin-top: 10px">
       Crear

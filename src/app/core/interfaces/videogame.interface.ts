@@ -6,7 +6,7 @@ export interface Videogame{
   nombre: string,
   descripcion: string,
   desarrollador?: Developer,
-  año: number,
-  imagen: string,
-  consolas: Consolee[],
+  año?: number,
+  imagen?: string,
+  consolas?: Consolee[],
 }
