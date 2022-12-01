@@ -37,14 +37,16 @@
     </div>
     <div class="field required">
       <label>Desarrollador</label>
-      <ng-select
-        [items]="developers"
-        placeholder="Selecciona un desarrollador"
-        bindLabel="nombre"
-        bindValue="_id"
-        formControlName="desarrollador"
-      >
-      </ng-select>
+      <div style="display:block">
+        <ng-select
+          [items]="developers"
+          placeholder="Selecciona un desarrollador"
+          bindLabel="nombre"
+          bindValue="_id"
+          formControlName="desarrollador"
+        >
+        </ng-select>
+      </div>
     </div>
 
    
@@ -55,7 +57,7 @@
         bindLabel="nombre"
         placeholder="Selecciona las consolas"
         bindValue="_id"
-        formControlName="desarrollador"
+        formControlName="consolas"
         [multiple]="true"
         [closeOnSelect]="false"
       >
