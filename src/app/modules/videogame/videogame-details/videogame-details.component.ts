@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VideogameServiceService } from '../videogame-main-page/services/videogame.service.service';
 import { Videogame } from '../../../core/interfaces/videogame.interface';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Consolee } from '../../../core/interfaces/console.interface';
 
 @Component({
   selector: 'app-videogame-details',
@@ -11,6 +12,11 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 export class VideogameDetailsComponent implements OnInit {
   videogame: Videogame | undefined;
   id: string = ""
+  consolas: Consolee[]= []
+  comaConsolas: string = ""
+
+  
+
   constructor(
     private VideogameService: VideogameServiceService,
     private route: ActivatedRoute
@@ -22,13 +28,20 @@ export class VideogameDetailsComponent implements OnInit {
       if (id) {
         this.id= id
         this.fetchOneVideogame(id)
+  
       }
     });
   }
 
   fetchOneVideogame(id: string) {
     this.VideogameService.fetchOneVideogame(id).subscribe(
-      (data) => (this.videogame = data)
+      (data) => {
+        this.videogame = data
+        this.consolas = this.videogame.consolas
+        this.comaConsolas = this.consolas.map(consola=>consola.nombre).join(", ")
+      }
     );
   }
+
+ 
 }

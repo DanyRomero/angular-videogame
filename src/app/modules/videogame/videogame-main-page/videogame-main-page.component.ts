@@ -42,7 +42,7 @@ export class VideogameMainPageComponent implements OnInit {
   fetchVideogames(){
     this.VideogameService.fetchVideogames().subscribe((data)=>{
       this.videogames = data;
-      console.log("videogames", this.videogames)
+     
     });
   }
 }

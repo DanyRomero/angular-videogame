@@ -1,4 +1,5 @@
 import { Developer } from './developer.interface';
+import { Consolee } from './console.interface';
 
 export interface Videogame{
   _id: string,
@@ -7,5 +8,5 @@ export interface Videogame{
   desarrollador?: Developer,
   año: number,
   imagen: string,
-  consolas: string[],
+  consolas: Consolee[],
 }

@@ -1,11 +1,31 @@
-<div class="ui container" style="margin-top: 20px;">
+<div class="ui container" style="margin-top: 20px">
   <h3>Detalle del Videojuego</h3>
-  <div class="ui card" *ngIf="videogame">
+  <div
+    class="ui card"
+    *ngIf="videogame"
+    style="display: block; width: 100%; margin-top: 40px"
+  >
     <div class="ui grid">
-      {{videogame.nombre}}
+      <div class="five wide column"></div>
+      <div class="eleven wide column">
+        <h4 class="ui violet header" style="margin-top: 10px">
+          {{ videogame.nombre }}
+        </h4>
+        <p>Desarrollado por {{ videogame.desarrollador?.nombre }}</p>
+        <h5>DESCRIPCIÓN</h5>
+        <p>{{ videogame.descripcion }}</p>
+        <h5>INFORMACION ADICIONAL</h5>
+        <p>Consolas: {{comaConsolas}}</p>
+        
+        <button
+          routerLink="/"
+          class="small ui button"
+          style="margin: 15px 0"
+        >
+          Regresar
+        </button>
+      </div>
     </div>
   </div>
-  <div *ngIf="!videogame">
-    No se ha encontrado el videojuego
-  </div>
+  <div *ngIf="!videogame">No se ha encontrado el videojuego</div>
 </div>
