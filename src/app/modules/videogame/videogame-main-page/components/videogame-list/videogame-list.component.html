@@ -11,18 +11,21 @@
           class="ui icon button"
           href=""
           style="background-color: #ffffff; color: red"
-          ><i class="window close outline icon"></i
-        ></button>
+        >
+          <i class="window close outline icon"></i>
+        </button>
         <a
-          
+          [routerLink]="['/videojuego', videogame._id, 'editar']"
           class="ui icon button"
           href=""
-          style="background-color: #ffffff; color: #2185D0"
+          style="background-color: #ffffff; color: #2185d0"
           ><i class="edit outline icon"></i
         ></a>
       </div>
       <div class="content">
-        <a [routerLink]="['/videojuego',videogame._id]" class="header">{{ videogame.nombre }}</a>
+        <a [routerLink]="['/videojuego', videogame._id]" class="header">{{
+          videogame.nombre
+        }}</a>
         <div class="description" style="margin-top: 8px">
           Por {{ videogame.desarrollador?.nombre }}
         </div>

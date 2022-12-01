@@ -5,6 +5,7 @@ import { DevelopersMainPageComponent } from './modules/developers/developers-mai
 import { VideogameFormComponent } from './modules/videogame/videogame-main-page/components/videogame-form/videogame-form.component';
 import { VideogameMainPageComponent } from './modules/videogame/videogame-main-page/videogame-main-page.component';
 import { VideogameDetailsComponent } from './modules/videogame/videogame-details/videogame-details.component';
+import { VideogameEditFormComponent } from './modules/videogame/videogame-main-page/components/videogame-edit-form/videogame-edit-form.component';
 
 const routes: Routes = [
   { path: '', component: VideogameMainPageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'consolas', component: ConsolasMainPageComponent },
   { path: 'videojuego/agregar', component: VideogameFormComponent },
   { path: 'videojuego/:id', component: VideogameDetailsComponent },
+  { path: 'videojuego/:id/editar', component: VideogameEditFormComponent },
 ];
 
 @NgModule({
