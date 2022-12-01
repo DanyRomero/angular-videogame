@@ -32,6 +32,7 @@ export class VideogameFormComponent implements OnInit {
     año: 0,
     activo: [''],
     consolas: [],
+    imagen: [''],
   });
 
   ngOnInit(): void {

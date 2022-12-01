@@ -8,7 +8,12 @@ import { ConsolasListComponent } from './consolas-main-page/components/consolas-
 import { TopConsolesComponent } from './consolas-main-page/components/top-consoles/top-consoles.component';
 
 @NgModule({
-  declarations: [ConsolasMainPageComponent, ConsolasFormComponent, ConsolasListComponent, TopConsolesComponent],
+  declarations: [
+    ConsolasMainPageComponent,
+    ConsolasFormComponent,
+    ConsolasListComponent,
+    TopConsolesComponent,
+  ],
   exports: [ConsolasMainPageComponent],
   imports: [CommonModule, SharedModule, ConsolasRoutingModule],
 })

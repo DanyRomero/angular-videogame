@@ -9,6 +9,7 @@ import { VideogameListComponent } from './videogame-main-page/components/videoga
 import { VideogameDetailsComponent } from './videogame-details/videogame-details.component';
 import { RouterModule } from '@angular/router';
 import { VideogameEditFormComponent } from './videogame-main-page/components/videogame-edit-form/videogame-edit-form.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { VideogameEditFormComponent } from './videogame-main-page/components/vid
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    SharedModule
   ]
 })
 export class VideogameModule { }
