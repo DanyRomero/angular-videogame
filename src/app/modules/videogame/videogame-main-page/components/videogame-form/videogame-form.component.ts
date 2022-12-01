@@ -13,15 +13,15 @@ import { ConsoleeService } from 'src/app/modules/consolas/service/consolee.servi
   templateUrl: './videogame-form.component.html',
 })
 export class VideogameFormComponent implements OnInit {
-  consoles : Consolee[] = []
-  developers : Developer[] = []
-  videogame : Videogame | any;
+  consoles: Consolee[] = [];
+  developers: Developer[] = [];
+  videogame: Videogame | any;
 
   constructor(
     private fb: FormBuilder,
-    private DeveloperService: DeveloperService,
-    private VideogameService: VideogameServiceService,
-    private ConsoleService: ConsoleeService,
+    private developerService: DeveloperService,
+    private videogameService: VideogameServiceService,
+    private consoleService: ConsoleeService,
     private router: Router
   ) {}
 
@@ -35,22 +35,22 @@ export class VideogameFormComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.DeveloperService.fetchDevelopers().subscribe(data=>{
+    this.developerService.fetchDevelopers().subscribe((data) => {
       this.developers = data;
-    })
-    this.ConsoleService.fetchConsoles().subscribe(data =>{
-      this.consoles= data
-      console.log(this.consoles)
-    })
+    });
+    this.consoleService.fetchConsoles().subscribe((data) => {
+      this.consoles = data;
+      console.log(this.consoles);
+    });
 
     $('.ui.dropdown').dropdown();
   }
 
   onSubmit() {
-    this.videogame =this.videogameForm.value;
-    console.log(this.videogame)
-    this.VideogameService.postVideogame(this.videogame).subscribe(data =>{
-      this.router.navigate(["/"])
-    })
+    this.videogame = this.videogameForm.value;
+    console.log(this.videogame);
+    this.videogameService.postVideogame(this.videogame).subscribe((data) => {
+      this.router.navigate(['/']);
+    });
   }
 }
