@@ -10,15 +10,19 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class VideogameDetailsComponent implements OnInit {
   videogame: Videogame | undefined;
-
+  id: string = ""
   constructor(
     private VideogameService: VideogameServiceService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParamMap.subscribe((data) => {
-      console.log(data.get('id'));
+    this.route.paramMap.subscribe((data) => {
+      let id = data.get("id")
+      if (id) {
+        this.id= id
+        this.fetchOneVideogame(id)
+      }
     });
   }
 

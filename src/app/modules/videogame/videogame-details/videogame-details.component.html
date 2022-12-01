@@ -1,8 +1,11 @@
 <div class="ui container" style="margin-top: 20px;">
   <h3>Detalle del Videojuego</h3>
-  <div class="ui card">
+  <div class="ui card" *ngIf="videogame">
     <div class="ui grid">
-      
+      {{videogame.nombre}}
     </div>
+  </div>
+  <div *ngIf="!videogame">
+    No se ha encontrado el videojuego
   </div>
 </div>
