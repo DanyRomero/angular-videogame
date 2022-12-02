@@ -12,7 +12,7 @@ export interface Videogame {
   activo?: string;
 }
 
-export type VideogameFormValues = Omit<Videogame, '_id'>;
+
 
 export interface filterVideogame {
   nombre: string;

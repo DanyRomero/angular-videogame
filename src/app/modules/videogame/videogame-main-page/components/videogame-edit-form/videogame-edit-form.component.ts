@@ -15,10 +15,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./videogame-edit-form.component.css'],
 })
 export class VideogameEditFormComponent implements OnInit {
-  videogame: Videogame = {} as Videogame
+  videogame: Videogame = {} as Videogame;
   consoles: Consolee[] = [];
   developers: Developer[] = [];
-  editForm?: FormGroup;
 
   constructor(
     private videogameService: VideogameServiceService,
@@ -26,8 +25,18 @@ export class VideogameEditFormComponent implements OnInit {
     private fb: FormBuilder,
     private developerService: DeveloperService,
     private consoleService: ConsoleeService,
-    private router: Router,
+    private router: Router
   ) {}
+
+  editForm = this.fb.group({
+    nombre: [this.videogame.nombre, Validators.required],
+    descripcion: [this.videogame.descripcion, Validators.required],
+    desarrollador: [this.videogame.desarrollador, Validators.required],
+    año: [this.videogame.año, Validators.required],
+    activo: [this.videogame.activo, Validators.required],
+    consolas: [this.videogame.consolas, Validators.required],
+    imagen: [this.videogame.imagen, Validators.required],
+  });
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((data) => {
@@ -35,16 +44,6 @@ export class VideogameEditFormComponent implements OnInit {
       if (id) {
         this.videogameService.fetchOneVideogame(id).subscribe((data) => {
           this.videogame = data;
-          
-          this.editForm = this.fb.group({
-            nombre: [data.nombre, Validators.required],
-            descripcion: [data.descripcion, Validators.required],
-            desarrollador: [data.desarrollador, Validators.required],
-            año: [data.año, Validators.required],
-            activo: [data.activo, Validators.required],
-            consolas: [data.consolas, Validators.required],
-            imagen: [data.imagen, Validators.required],
-          });
         });
       }
     });
@@ -59,8 +58,11 @@ export class VideogameEditFormComponent implements OnInit {
   }
 
   onSubmit(id: string) {
-    this.videogameService.editVideogame(id, this.editForm?.value).subscribe((data)=>{
-      this.router.navigate(["/"])
-    })
+    const data = this.editForm?.value;
+    if (data) {
+      this.videogameService.editVideogame(id, data).subscribe((data) => {
+        this.router.navigate(['/']);
+      });
+    }
   }
 }
