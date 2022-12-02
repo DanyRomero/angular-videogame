@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { DeveloperService } from 'src/app/modules/developers/service/developer.service';
 import { VideogameServiceService } from '../../services/videogame.service.service';
 import { Developer } from '../../../../../core/interfaces/developer.interface';
@@ -26,12 +26,12 @@ export class VideogameFormComponent implements OnInit {
   ) {}
 
   videogameForm = this.fb.group({
-    nombre: [''],
-    descripcion: [''],
-    desarrollador: [''],
-    año: 0,
-    activo: [''],
-    consolas: [],
+    nombre: ['', Validators.required],
+    descripcion: ['', Validators.required],
+    desarrollador: ['', Validators.required],
+    año: [0, Validators.required],
+    activo: ['', Validators.required],
+    consolas: [[], Validators.required],
     imagen: [''],
   });
 
@@ -43,13 +43,11 @@ export class VideogameFormComponent implements OnInit {
       this.consoles = data;
       console.log(this.consoles);
     });
-
-    $('.ui.dropdown').dropdown();
   }
 
   onSubmit() {
     this.videogame = this.videogameForm.value;
-    console.log(this.videogame);
+    
     this.videogameService.postVideogame(this.videogame).subscribe((data) => {
       this.router.navigate(['/']);
     });

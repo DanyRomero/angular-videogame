@@ -1,1 +1,127 @@
-<p>videogame-edit-form works!</p>
+<h1 class="ui center aligned header" style="margin-top: 15px">
+  Editar Videojuego
+</h1>
+<div
+  class="ui container"
+  style="margin-top: 20px; width: 50%"
+  *ngIf="editForm"
+>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="ui form">
+    <div class="field required">
+      <label>Nombre</label>
+      <input
+        type="text"
+        class="ui input"
+        formControlName="nombre"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      />
+    </div>
+    <div class="field required">
+      <label>Descripción</label>
+      <textarea
+        cols="30"
+        rows="10"
+        formControlName="descripcion"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      ></textarea>
+    </div>
+    <div class="field required">
+      <label>Desarrollador</label>
+      <div style="display: block">
+        <ng-select
+          [items]="developers"
+          placeholder="Selecciona un desarrollador"
+          bindLabel="nombre"
+          bindValue="_id"
+          formControlName="desarrollador"
+        >
+        </ng-select>
+      </div>
+    </div>
+
+    <div class="field required">
+      <label>Consolas</label>
+      <ng-select
+        [items]="consoles"
+        bindLabel="nombre"
+        placeholder="Selecciona las consolas"
+        bindValue="_id"
+        formControlName="consolas"
+        [multiple]="true"
+        [closeOnSelect]="false"
+      >
+      </ng-select>
+    </div>
+    <div class="field required">
+      <label>Año</label>
+      <input
+        type="number"
+        placeholder="Año"
+        class="ui input"
+        formControlName="año"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      />
+    </div>
+    <div class="field required">
+      <label>Activo</label>
+      <input
+        type="text"
+        placeholder="Activo"
+        class="ui input"
+        formControlName="activo"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      />
+    </div>
+    <div class="field required">
+      <label>Imagen</label>
+      <input
+        type="text"
+        placeholder="Imagen"
+        class="ui input"
+        formControlName="imagen"
+        style="
+          display: block;
+          width: 100%;
+          border-radius: 5px;
+          padding: 10px;
+          border: 1px gray solid;
+          background-color: #f5f5f5;
+        "
+      />
+    </div>
+
+    <button class="ui violet button fluid" style="margin-top: 10px">
+      Crear
+    </button>
+  </form>
+</div>
+
+<div *ngIf="!videogame">No se ha encontrado el videojuego</div>
