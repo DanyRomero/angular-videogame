@@ -7,7 +7,7 @@ import { DeveloperService } from 'src/app/modules/developers/service/developer.s
 import { ConsoleeService } from 'src/app/modules/consolas/service/consolee.service';
 import { Consolee } from '../../../../../core/interfaces/console.interface';
 import { Developer } from '../../../../../core/interfaces/developer.interface';
-import { NameFormComponent } from '../../../../../shared/name-form/name-form.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-videogame-edit-form',
@@ -25,7 +25,8 @@ export class VideogameEditFormComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private developerService: DeveloperService,
-    private consoleService: ConsoleeService
+    private consoleService: ConsoleeService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -57,7 +58,10 @@ export class VideogameEditFormComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(id: string) {
     console.log('editaaaando');
+    this.videogameService.editVideogame(id, this.editForm?.value).subscribe((data)=>{
+      this.router.navigate(["/"])
+    })
   }
 }

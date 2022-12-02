@@ -6,7 +6,7 @@
   style="margin-top: 20px; width: 50%"
   *ngIf="editForm"
 >
-  <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="ui form">
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(videogame!._id)" class="ui form">
     <div class="field required">
       <label>Nombre</label>
       <input

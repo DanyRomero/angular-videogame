@@ -26,4 +26,8 @@ export class VideogameServiceService {
   postVideogame(videogame: Videogame) : Observable<Videogame>{
     return this.http.post<Videogame>(`http://localhost:5005/videojuegos`, videogame)
   }
+
+  editVideogame(id: string, videogame: Videogame) : Observable<Videogame>{
+    return this.http.put<Videogame>(`http://localhost:5005/videojuegos/${id}`, videogame)
+  }
 }
