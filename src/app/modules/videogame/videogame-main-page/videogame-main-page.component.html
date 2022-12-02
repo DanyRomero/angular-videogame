@@ -9,8 +9,15 @@
   </div>
 </div>
 <div class="ui container grid">
-  <div class="six wide column"></div>
+  <div class="six wide column">
+    <app-videogame-filters
+      (filters)="filterVideogames($event)"
+    ></app-videogame-filters>
+  </div>
   <div class="ten wide column">
-    <app-videogame-list (onDeleteVideogame)="deleteVideogame($event)" [videogames]="videogames"></app-videogame-list>
+    <app-videogame-list
+      (onDeleteVideogame)="deleteVideogame($event)"
+      [videogames]="filteredVideogames"
+    ></app-videogame-list>
   </div>
 </div>

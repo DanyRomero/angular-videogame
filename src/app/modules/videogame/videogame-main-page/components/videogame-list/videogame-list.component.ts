@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Videogame } from '../../../../../core/interfaces/videogame.interface';
 import { VideogameServiceService } from '../../services/videogame.service.service';
 
@@ -10,10 +10,8 @@ import { VideogameServiceService } from '../../services/videogame.service.servic
 export class VideogameListComponent {
   @Input() videogames: Videogame[]= []
   @Output() onDeleteVideogame = new EventEmitter();
-  
+
   deleteVideogame(id: string){
     this.onDeleteVideogame.emit(id);
   }
-  
-
 }

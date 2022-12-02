@@ -1,0 +1,26 @@
+<h3>Buscar por:</h3>
+<div
+  class="ui card"
+  style="margin-top: 30px; padding: 20px; display: block; width: 100%"
+>
+  <form class="ui form" [formGroup]="findByForm" (ngSubmit)="handleFilters()">
+    <input
+      placeholder="Buscar por nombre"
+      type="text"
+      formControlName="nombre"
+    />
+    <input
+      style="margin-top: 10px"
+      placeholder="Buscar por desarrollador"
+      type="text"
+      formControlName="desarrollador"
+    />
+    <button
+      class="mini ui violet button fluid"
+      type="submit"
+      style="margin-top: 10px"
+    >
+      Buscar
+    </button>
+  </form>
+</div>

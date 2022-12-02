@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./videogame-edit-form.component.css'],
 })
 export class VideogameEditFormComponent implements OnInit {
-  videogame?: Videogame;
+  videogame: Videogame = {} as Videogame
   consoles: Consolee[] = [];
   developers: Developer[] = [];
   editForm?: FormGroup;
@@ -59,7 +59,6 @@ export class VideogameEditFormComponent implements OnInit {
   }
 
   onSubmit(id: string) {
-    console.log('editaaaando');
     this.videogameService.editVideogame(id, this.editForm?.value).subscribe((data)=>{
       this.router.navigate(["/"])
     })

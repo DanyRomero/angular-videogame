@@ -10,6 +10,7 @@ import { VideogameDetailsComponent } from './videogame-details/videogame-details
 import { RouterModule } from '@angular/router';
 import { VideogameEditFormComponent } from './videogame-main-page/components/videogame-edit-form/videogame-edit-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { VideogameFiltersComponent } from './videogame-main-page/components/videogame-filters/videogame-filters.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     VideogameListComponent,
     VideogameDetailsComponent,
     VideogameEditFormComponent,
+    VideogameFiltersComponent,
     
 
   ],
