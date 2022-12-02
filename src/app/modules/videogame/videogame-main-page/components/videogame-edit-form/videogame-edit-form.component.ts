@@ -58,7 +58,7 @@ export class VideogameEditFormComponent implements OnInit {
   }
 
   onSubmit(id: string) {
-    const data = this.editForm?.value;
+    const data: Videogame = this.editForm?.value as Videogame;
     if (data) {
       this.videogameService.editVideogame(id, data).subscribe((data) => {
         this.router.navigate(['/']);
