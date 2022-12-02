@@ -21,7 +21,7 @@ import { VideogameFiltersComponent } from './videogame-main-page/components/vide
     VideogameDetailsComponent,
     VideogameEditFormComponent,
     VideogameFiltersComponent,
-    
+ 
 
   ],
   exports: [
